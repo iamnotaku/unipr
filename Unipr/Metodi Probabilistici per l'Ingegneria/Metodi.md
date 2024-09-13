@@ -125,3 +125,26 @@ Anche se una variabile aleatoria continua può assumere un numero infinito di va
 - **Area sotto la curva:** L'area totale sotto la curva della pdf su tutto lo spazio dei valori possibili deve essere 1, il che riflette il fatto che la probabilità totale di tutti gli eventi possibili è 1: $$\int_{-\infty}^{+\infty} f_X(x) \ dx = 1$$
 
 - **Probabilita' come area:** La probabilita' che la v.a. $X$ cada in un certo intervallo $[a, b]$ e' data dall'area sotto la curva della PDF tra $a$ e $b$: $$\mathbb{P}(a \leq X \leq b)= \int_a^b f_X(x) \ dx$$
+
+## **Esempi di variabili aleatorie**
+
+### **Variabile aleatoria di Bernoulli:**
+
+- Sappiamo che l'insieme delle soluzioni, di una variabile aleatoria di Bernoulli comprende i numeri da 0 a 1: $X(S) = [0,1]$
+
+- **La funzione di probabilita'** di $X$ assegna $1$ la probabilita' di successo $p$ e allo $0$ la probabilita' di insuccesso $1-p$: $$f_X:X(S)\to \mathbb{R}, f_X(i)= P([X=i]) = p^i(1-p)^{1-i}$$
+
+- **La funzione di ripartizione** di $X$ e' nulla prima dello $0$, vale $1$ dopo l'$1$ e vale $1-p$ tra $0$ e $1$: $$F_X:\mathbb{R}\to[0,1], \ F_X(x) = P(X\leq x) = \begin{cases} 0 & \quad \text{se $x < 0 $} \\ 1-p & \quad \text{se $0 \leq x < 1$} \\ 1 & \quad \text{se $x \geq 1$} \end{cases}$$
+
+- **Valore atteso e varianza** di $X$ valgono: $$E[X] = \mu_X = p$$ $$Var[X] = \sigma^2_X = p(1-p)$$
+
+### **Variabile aleatoria binomiale:**
+
+- $X$ puo' assumere valori interi da $0$ a $n$.
+
+- **La funzione di probabilita'** di $X$ vale: $$f_X:X(S)\to\mathbb{R}, f_X(i)= P(X=i)=C_{n,i}\ p^i(1-p)^{n-i}$$
+dove il numero $p^i(1-p)^{n-i}$ esprime la probabilita' di una specifica sequenza di $i$ successi ed $n-i$ insuccessi, mentre il numero $C_{n,i} = \frac{n!}{i!(n-i)!} = \binom{n}{i}$ e' il coefficiente binomiale $n$ su $i$ e conta il numero di possibili sequenze con $i$ successi e $n-i$ insuccessi; quindi la funzione $f_X(i)$ e' la probabilita' di $i$ successi in $n$ prove.
+
+- **La funzione di ripartizione** si ottiene semplicemente dalla somma della funzione di probabilita', $F_X(x)=\displaystyle\sum_i\leq x \ \ f_X(i)$ secondo la regola generale, ma non ammette una forma analitica esplicita'.
+
+- **Il valore atteso e la varianza** di $X$ valgono: $$E[X] = \mu_X = np$$ $$Var[X] = \sigma_X^2 = np(i-p)$$
